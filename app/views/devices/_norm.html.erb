@@ -1,0 +1,37 @@
+
+<br>
+<h2>Get them cities</h2>
+<br>
+
+<%= form_for(@device, :method => 'sendNotification') do |form| %>
+  <% if device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(device.errors.count, "error") %> prohibited this device from being saved:</h2>
+
+      <ul>
+      <% device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.hidden_field :token, id: ":device_token"  %>
+  </div>
+
+  <br>
+  <div class="field">
+    <%= collection_check_boxes(:device, :city_ids, @city, :id, :name) %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+
+
+
+<% end %>

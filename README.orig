@@ -1,0 +1,77 @@
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* History
+
+31MAY17 - v.00
+- genesis
+- created scaffold for city, device, and join table.
+
+01JUN17 - v.01
+- created cityStatus model and scaffold
+- created a has_one association with city
+
+07JUN17 - v.02
+- can return a list of cities for a specific device.
+
+12JUN17 - v.03
+- can POST
+- TODO: process the jsonObject - parse and insert into cities and devices
+
+13JUN17 - v.04
+- can parse a basic jsonObject.
+- TODO: need to make sure i have the correct jsonObject and be able to insert into devices/cities
+
+14JUN17 - v.05
+- can perform a POST to device resource and update cities.
+- TODO: capture id for cities and use this.
+
+14JUN17 - v.06
+- can capture token and city ids and can create new device-cities subscription list.
+
+16JUN17 - v.07
+- modified devices_controller to test for existance of device (so it can be deleted) before creating a new one.
+- this method can be used for UPDATE mode of the subscription list.
+
+18JUN17 - v.08
+- Happy Father's Day
+- On boarding done.  Can handle device tokens.
+
+22JUN17 - v.09
+- created method grab device tokens based on city and send notification to those devices.
+- TODO 1: handle sending notifications to multiple devices.
+- TODO 2: create view to select city(ies) and operating status.  this set will be used to generate a list of
+          devices to send notifications to.
+
+23JUN17 - v.10
+- started creating view to handle selectinng cities and operating status
+- can send notifications via mtws
+
+
+26JUN17 - v.11
+- completed SendNotification web page to send notfications to multiple cities
+
+28jun17 - V.12
+- completed DEVICES_CONTROLLER: getCityStatusesFor: module - can generate a json response
+
+
